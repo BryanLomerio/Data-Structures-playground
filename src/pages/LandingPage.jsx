@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Card from "../components/Card";
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -12,18 +13,14 @@ const LandingPage = () => {
 
     return (
         <div className="container mx-auto p-8">
-            <h1 className="text-3xl font-bold mb-6">Data Structures Playground</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center">DS Play</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Card*/}
-                <div
-                    className="card p-4 border border-gray-300 rounded-lg shadow-lg cursor-pointer hover:bg-gray-200"
+                <Card
+                    title="Array Visualizer"
+                    description="Click to explore Array visualization"
                     onClick={() => handleCardClick("array")}
-                >
-                    <h3 className="text-xl font-semibold">Array Visualizer</h3>
-                    <p className="mt-2 text-sm text-gray-500">Click to explore Array visualization</p>
-                </div>
-
+                />
             </div>
         </div>
     );
