@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import ArrayVisualizer from "./components/ArrayVisualizer";
+import ArrayVisualizer from "./components/array/ArrayVisualizer";
 
 const App = () => {
   return (
