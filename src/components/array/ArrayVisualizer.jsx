@@ -206,21 +206,24 @@ const ArrayVisualizer = () => {
             <h2 className="text-xl font-semibold ml-4 text-center">Array Visualizer</h2>
             <div className="mb-4">
                 <h3 className="text-lg">Array:</h3>
-                <div
-                    className={`p-4 rounded-lg border-4 mb-10 ${arrayUpdated ? 'border-blue-500' : 'border-gray-300'
-                        }`}
-                >
-                    <div className="flex gap-2">
+                <div className="p-4 rounded-lg border-4 mb-10 ${arrayUpdated ? 'border-blue-500' : 'border-gray-300'}">
+                    <div className="flex gap-2 items-center justify-center flex-wrap">
                         {array.map((element, index) => (
                             <div
                                 key={index}
-                                className={`px-4 py-2 border rounded-lg ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                                className={`relative px-4 mb-2 py-2 border rounded-lg ${highlightedElement === element ? 'bg-green-300' : ''}`}
                             >
                                 {element}
+
+                                {/* Index Indicator */}
+                                <div className="relative bottom-0 left-0 right-0 text-center text-xs text-red-300">
+                                    {index}
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
+
             </div>
             <ArrayControls
                 onAddElement={addElement}
