@@ -1,4 +1,4 @@
-# Data Structures - Easy Guide
+# Data Structures
 
 ## 1. Arrays
 
@@ -89,7 +89,4 @@ A **trie** is a tree-like structure used to store words. Each node represents a 
 - **Use Case**: Autocomplete search, where the system guesses the word you're typing based on the letters you've entered.
 
 ---
-
-## Conclusion
-
-This guide introduces some basic data structures that are important for solving problems in programming. Understanding how these work will help you write better, faster code.
+Basic data structures that are important for solving problems in programming. Understanding how these work will help you write better, faster code.
