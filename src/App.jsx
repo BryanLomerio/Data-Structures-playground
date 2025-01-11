@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import ArrayVisualizer from "./components/array/ArrayVisualizer";
-import FloatingSocialMedia from './components/FloatingSocialMedia';
+import LinkedListVisualizer from "./pages/LinkedListVisualizer"
 
 const App = () => {
   return (
@@ -10,8 +10,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/array-visualizer" element={<ArrayVisualizer />} />
+        <Route path="/linked-list-visualizer" element={<LinkedListVisualizer />} />
       </Routes>
-      <FloatingSocialMedia />
     </Router>
   );
 };

@@ -8,6 +8,8 @@ const LandingPage = () => {
     const handleCardClick = (visualizerType) => {
         if (visualizerType === "array") {
             navigate("/array-visualizer");
+        } else if (visualizerType === "linked-list") {
+            navigate("/linked-list-visualizer");
         }
     };
 
@@ -20,6 +22,11 @@ const LandingPage = () => {
                     title="Array Visualizer"
                     description="Click to explore Array visualization"
                     onClick={() => handleCardClick("array")}
+                />
+                <Card
+                    title="Linked List Visualizer"
+                    description="Click to explore Linked List visualization"
+                    onClick={() => handleCardClick("linked-list")}
                 />
             </div>
         </div>
