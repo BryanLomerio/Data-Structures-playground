@@ -5,3 +5,12 @@
 body {
     font-family: "Poppins", serif;
 }
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  
+  .cursor-auto {
+    cursor: auto;
+  }
+  
