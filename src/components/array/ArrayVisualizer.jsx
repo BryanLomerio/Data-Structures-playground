@@ -4,6 +4,7 @@ import { IoArrowBackSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import GeneratedCode from './GeneratedCode';
+import WhatIsArray from '../../components/array/WhatIsArray';
 
 const ArrayVisualizer = () => {
     const [array, setArray] = useState([1, 2, 3, 4, 5]);
@@ -14,6 +15,12 @@ const ArrayVisualizer = () => {
     const [highlightedElement, setHighlightedElement] = useState(null);
     const [deletedElement, setDeletedElement] = useState(null);
     const [arrayUpdated, setArrayUpdated] = useState(false);
+      const [isVisible, setIsVisible] = useState(false);
+    
+      const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+      };
+    
 
     // Nav
     const navigate = useNavigate();
@@ -246,6 +253,49 @@ const ArrayVisualizer = () => {
             <div>
                 <GeneratedCode generatedCode={generatedCode} explanation={explanation} />
             </div>
+
+            <div className="mt-10">
+            <button
+        onClick={toggleVisibility}
+        className="flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-md mb-4"
+      >
+        What is an Array?
+        <span className="ml-2">
+          {isVisible ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 14l-7-7-7 7"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 10l-7 7-7-7"
+              />
+            </svg>
+          )}
+        </span>
+      </button>
+      {isVisible && <WhatIsArray />}
+    </div>
         </div>
     );
 };

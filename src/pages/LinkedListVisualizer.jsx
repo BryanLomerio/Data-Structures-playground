@@ -3,6 +3,7 @@ import LinkedListDemo from '../components/linkedlist/LinkedListDemo';
 import OperationsMenu from '../components/linkedlist/OperationsMenu';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import WhatIsLinkedList from "../components/linkedlist/WhatIsLinkedList";
 
 
 const LinkedListVisualizer = () => {
@@ -15,6 +16,11 @@ const LinkedListVisualizer = () => {
   const [insertSubOperation, setInsertSubOperation] = useState('insertBack');
   const [deleteSubOperation, setDeleteSubOperation] = useState('remove');
   const [generatedCode, setGeneratedCode] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
 
   const navigate = useNavigate();
   const goBack = () => navigate('/');
@@ -268,6 +274,50 @@ const LinkedListVisualizer = () => {
         <h3 className="text-lg font-semibold">Method</h3>
         <pre className="bg-gray-100 p-4 rounded">{generatedCode}</pre>
       </div>
+
+      <div className="mt-10">
+      <button
+        onClick={toggleVisibility}
+        className="flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-md mb-4"
+      >
+      What is Linked List?
+        <span className="ml-2">
+          {isVisible ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 14l-7-7-7 7"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 10l-7 7-7-7"
+              />
+            </svg>
+          )}
+        </span>
+      </button>
+      {isVisible && <WhatIsLinkedList />}
+    </div>
+
     </div>
   );
 };
