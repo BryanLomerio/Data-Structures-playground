@@ -211,23 +211,25 @@ const ArrayVisualizer = () => {
                 Back
             </button>
             <div className="mb-4">
-                <div className="p-4 rounded-lg border-4 mb-10 ${arrayUpdated ? 'border-blue-500' : 'border-gray-300'}">
-                    <div className="flex gap-2 items-center justify-center flex-wrap">
-                        {array.map((element, index) => (
-                            <div
-                                key={index}
-                                className={`relative px-4 mb-2 py-2  border-green-600 border-2 rounded-lg ${highlightedElement === element ? 'bg-green-300' : ''}`}
-                            >
-                                {element}
+                
+            <div className={`p-4 border-4 mb-10 ${arrayUpdated ? 'border-gray-500' : 'border-gray-500'}`}>
+  <div className="flex gap-0 items-center justify-center flex-wrap">
+    <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
+      <div
+        key={index}
+        className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
+      >
+        {element}
 
-                                {/* Index Indicator */}
-                                <div className="relative bottom-0 left-0 right-0 text-center text-xs text-red-600">
-                                    {index}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+        {/* Index Indicator */}
+        <div className="absolute bottom-0 left-0 right-0 text-center text-xs font-bold text-black-600">
+          arr[{index}]
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
             </div>
             <ArrayControls
@@ -255,7 +257,7 @@ const ArrayVisualizer = () => {
             <div className="mt-10">
             <button
         onClick={toggleVisibility}
-        className="flex items-center justify-between px-4 py-2 bg-gray-700 text-white rounded-md mb-4"
+        className="flex items-center justify-between px-4 py-2 bg-gray-500 text-white rounded-md mb-4"
       >
         What is an Array?
         <span className="ml-2">

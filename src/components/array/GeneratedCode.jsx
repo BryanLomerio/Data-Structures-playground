@@ -12,7 +12,7 @@ const GeneratedCode = ({ generatedCode, explanation }) => {
             <h4 className="font-semibold">Code:</h4>
             <pre className="bg-black text-white p-4">{generatedCode}</pre>
             <button
-                className="mt-2 px-4 py-2 bg-gray-800 text-white rounded"
+                className="mt-2 px-4 py-2 bg-gray-500 text-white rounded"
                 onClick={handleToggleExplanation}
             >
                 {showExplanation ? 'Hide Explanation' : 'View Explanation'}

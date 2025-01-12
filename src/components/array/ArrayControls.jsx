@@ -18,7 +18,7 @@ const ArrayControls = ({
     insertIndex,
     setInsertIndex,
 }) => {
-    const buttonClass = "h-12 w-full bg-gray-500 text-white rounded-lg text-center hover:bg-gray-600";
+    const buttonClass = "h-12 w-full bg-gray-600 text-white rounded-lg text-center hover:bg-gray-600";
 
     return (
         <div className="grid grid-cols-3 gap-10">

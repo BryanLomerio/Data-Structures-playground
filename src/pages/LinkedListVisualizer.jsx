@@ -264,7 +264,7 @@ const LinkedListVisualizer = () => {
             </div>
           </div>
 
-          <button className="w-full p-2 text-white bg-blue-500 hover:bg-blue-600 rounded" onClick={handleExecute}>
+          <button className="w-full p-2 text-white bg-gray-600 hover:bg-gray-800 rounded" onClick={handleExecute}>
             Execute
           </button>
         </div>
@@ -278,7 +278,7 @@ const LinkedListVisualizer = () => {
       <div className="mt-10">
       <button
         onClick={toggleVisibility}
-        className="flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-md mb-4"
+        className="flex items-center justify-between px-4 py-2 bg-gray-600 text-white rounded-md mb-4"
       >
       What is Linked List?
         <span className="ml-2">
