@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import ArrayVisualizer from "./components/array/ArrayVisualizer";
 import LinkedListVisualizer from "./pages/LinkedListVisualizer"
+import Github from './components/Github'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/array-visualizer" element={<ArrayVisualizer />} />
         <Route path="/linked-list-visualizer" element={<LinkedListVisualizer />} />
       </Routes>
+      <Github/>
     </Router>
   );
 };
