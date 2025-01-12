@@ -6,7 +6,7 @@ function Github() {
   return (
     <div>
       <motion.div
-        className="absolute top-[125px] right-[125px]"
+        className="absolute top-[40px] right-[125px]"
         initial={{ x: 0, y: 0 }}
         animate={{ x: 0, y: 0 }}
         drag
