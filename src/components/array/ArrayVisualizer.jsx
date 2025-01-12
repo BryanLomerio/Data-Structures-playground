@@ -218,7 +218,7 @@ const ArrayVisualizer = () => {
                         {array.map((element, index) => (
                             <div
                                 key={index}
-                                className={`relative px-4 mb-2 py-2 border rounded-lg ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                                className={`relative px-4 mb-2 py-2  border-green-600 border-2 rounded-lg ${highlightedElement === element ? 'bg-green-300' : ''}`}
                             >
                                 {element}
 
