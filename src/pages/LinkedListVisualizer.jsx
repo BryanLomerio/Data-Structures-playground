@@ -203,7 +203,7 @@ const LinkedListVisualizer = () => {
   
   return (
     <div className="max-w-7xl mx-auto mt-10 p-5 rounded-lg">
-      <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-5" onClick={goBack}>
+      <button className="flex items-center gap-2 text-black-600 hover:text-black-800 mb-5" onClick={goBack}>
         <IoArrowBackSharp /> Back
       </button>
       <LinkedListDemo linkedList={linkedList} />
