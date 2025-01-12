@@ -216,7 +216,7 @@ const ArrayVisualizer = () => {
                                 {element}
 
                                 {/* Index Indicator */}
-                                <div className="relative bottom-0 left-0 right-0 text-center text-xs text-red-300">
+                                <div className="relative bottom-0 left-0 right-0 text-center text-xs text-red-600">
                                     {index}
                                 </div>
                             </div>
