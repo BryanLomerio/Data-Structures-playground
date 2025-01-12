@@ -213,24 +213,23 @@ const ArrayVisualizer = () => {
             <div className="mb-4">
                 
             <div className={`p-4 border-4 mb-10 ${arrayUpdated ? 'border-gray-500' : 'border-gray-500'}`}>
-  <div className="flex gap-0 items-center justify-center flex-wrap">
-    <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
-      <div
-        key={index}
-        className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
-      >
-        {element}
+            <div className="flex gap-0 items-center justify-center flex-wrap">
+                <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
+                <div
+                    key={index}
+                    className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                >
+                    {element}
 
-        {/* Index Indicator */}
-        <div className="absolute bottom-0 left-0 right-0 text-center text-xs font-bold text-black-600">
-          arr[{index}]
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-
+                    {/* Index Indicator */}
+                    <div className="absolute bottom-0 left-0 right-0 text-center text-xs font-bold text-black-600">
+                    arr[{index}]
+                    </div>
+                </div>
+                ))}
+            </div>
+            </div>
+            
             </div>
             <ArrayControls
                 onAddElement={addElement}

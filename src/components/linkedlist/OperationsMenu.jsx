@@ -121,16 +121,16 @@ const OperationsMenu = ({
         <label className="block mb-2">Select Utility Operation</label>
         <div className="flex flex-col space-y-2">
         <label className="flex items-center">
-  <input
-    type="radio"
-    name="utility"
-    value="reverse"
-    checked={selectedUtility === 'reverse'}
-    onChange={() => setSelectedUtility('reverse')}
-    className="mr-2"
-  />
-  reverse
-</label>
+        <input
+          type="radio"
+          name="utility"
+          value="reverse"
+          checked={selectedUtility === 'reverse'}
+          onChange={() => setSelectedUtility('reverse')}
+          className="mr-2"
+        />
+        reverse
+      </label>
 
 
           <label className="flex items-center">
