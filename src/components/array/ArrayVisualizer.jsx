@@ -204,15 +204,13 @@ const ArrayVisualizer = () => {
     return (
         <div className="p-6 max-w-screen-lg mx-auto">
             <button
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-10 mt-10"
                 onClick={goBack}
             >
                 <IoArrowBackSharp />
                 Back
             </button>
-            <h2 className="text-xl font-semibold ml-4 text-center">Array Visualizer</h2>
             <div className="mb-4">
-                <h3 className="text-lg">Array:</h3>
                 <div className="p-4 rounded-lg border-4 mb-10 ${arrayUpdated ? 'border-blue-500' : 'border-gray-300'}">
                     <div className="flex gap-2 items-center justify-center flex-wrap">
                         {array.map((element, index) => (
@@ -257,7 +255,7 @@ const ArrayVisualizer = () => {
             <div className="mt-10">
             <button
         onClick={toggleVisibility}
-        className="flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-md mb-4"
+        className="flex items-center justify-between px-4 py-2 bg-gray-700 text-white rounded-md mb-4"
       >
         What is an Array?
         <span className="ml-2">
