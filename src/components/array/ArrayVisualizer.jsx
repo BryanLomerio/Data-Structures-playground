@@ -204,7 +204,7 @@ const ArrayVisualizer = () => {
     return (
         <div className="p-6 max-w-screen-lg mx-auto">
             <button
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-10 mt-10"
+                className="flex items-center gap-2 text-black-600 hover:text-gray-800 mb-10 mt-10"
                 onClick={goBack}
             >
                 <IoArrowBackSharp />
@@ -217,7 +217,7 @@ const ArrayVisualizer = () => {
                 <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
                 <div
                     key={index}
-                    className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                    className={`relative px-8 mb-0 py-4 border-green-600 border-4 ${highlightedElement === element ? 'bg-green-300' : ''}`}
                 >
                     {element}
 

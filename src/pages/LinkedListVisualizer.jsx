@@ -4,6 +4,7 @@ import OperationsMenu from '../components/linkedlist/OperationsMenu';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import WhatIsLinkedList from "../components/linkedlist/WhatIsLinkedList";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const LinkedListVisualizer = () => {

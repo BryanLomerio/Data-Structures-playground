@@ -58,7 +58,7 @@ const LandingPage = () => {
                     title="Stacks Visualizer"
                     description="Click to explore Stacks visualization"
                     onClick={() => handleCardClick("stacks")}
-                    image={Soon}
+                    image={Stacks}
                 />
                 <Card
                     title="Queues Visualizer"

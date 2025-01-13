@@ -72,7 +72,7 @@ const ArrayControls = ({
                 />
                 <button
                     onClick={onPushElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-500 text-white rounded-lg text-center hover:bg-gray-600"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-600 text-white rounded-lg text-center hover:bg-gray-600"
                 >
                     Push
                 </button>
@@ -92,7 +92,7 @@ const ArrayControls = ({
                 />
                 <button
                     onClick={onInsertElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-500 text-white rounded-lg text-center hover:bg-gray-600"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-600 text-white rounded-lg text-center hover:bg-gray-700"
                 >
                     Insert
                 </button>
