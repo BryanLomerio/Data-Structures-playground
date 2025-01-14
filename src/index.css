@@ -3,48 +3,51 @@
 @tailwind utilities;
 
 body {
-    font-family: "Poppins", serif;
+  font-family: "Poppins", serif;
 }
 
 .cursor-not-allowed {
-    cursor: not-allowed;
+  cursor: not-allowed;
+}
+
+.cursor-auto {
+  cursor: auto;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    background-color: #ffdddd;
+    /* Light red */
+    opacity: 1;
   }
-  
-  .cursor-auto {
-    cursor: auto;
+
+  100% {
+    background-color: transparent;
+    opacity: 0;
   }
-  
-  .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    background-color: #ddffdd;
+    /* Light green */
   }
-  
-  @keyframes fadeOut {
-    0% {
-      background-color: #ffdddd; /* Light red */
-      opacity: 1;
-    }
-    100% {
-      background-color: transparent;
-      opacity: 0;
-    }
+
+  100% {
+    transform: scale(1);
+    background-color: transparent;
   }
-  
-  @keyframes popIn {
-    0% {
-      transform: scale(0.5);
-      background-color: #ddffdd; /* Light green */
-    }
-    100% {
-      transform: scale(1);
-      background-color: transparent;
-    }
-  }
-  
-  .animate-remove {
-    animation: fadeOut 0.5s ease-out;
-  }
-  
-  .animate-insert {
-    animation: popIn 0.5s ease-out;
-  }
-  
+}
+
+.animate-remove {
+  animation: fadeOut 0.5s ease-out;
+}
+
+.animate-insert {
+  animation: popIn 0.5s ease-out;
+}

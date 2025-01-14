@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function Stacks() {
   const [stack, setStack] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [lastPushed, setLastPushed] = useState(null);
   const [lastPopped, setLastPopped] = useState(null);
-  const [Log, setNotification] = useState('Pushed: N/A'); 
+  const [Log, setNotification] = useState('Pushed: N/A');
+  const [peekIndex, setPeekIndex] = useState('');
+  const [peekedItem, setPeekedItem] = useState(null);
+  const [peekedColor, setPeekedColor] = useState('bg-gray-200');
 
   const navigate = useNavigate();
   const goBack = () => navigate('/');
 
   const pushToStack = () => {
-    if (inputValue.trim() === '') return; 
+    if (inputValue.trim() === '') return;
     setStack((prevStack) => {
       const newStack = [...prevStack, inputValue];
       setLastPushed(inputValue);
@@ -39,9 +43,57 @@ function Stacks() {
     setNotification('Stack cleared');
   };
 
+  const handlePeek = () => {
+    if (peekIndex.startsWith('0') && peekIndex !== '0') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid index!',
+        text: 'Index cannot have leading zeros.',
+      });
+      setPeekedItem(null);
+      setPeekedColor('bg-gray-200');
+      return;
+    }
+
+    // Check if stack is empty
+    if (stack.length === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Stack is empty!',
+        text: 'Please add items to the stack before peeking.',
+      });
+      setPeekedItem(null);
+      setPeekedColor('bg-gray-200');
+      return;
+    }
+
+    const index = parseInt(peekIndex, 10);
+
+    if (isNaN(index) || index < 0 || index >= stack.length || peekIndex.trim() === '') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid index!',
+        text: `Valid index range: 0 to ${stack.length - 1}`,
+      });
+      setPeekedItem(null);
+      setPeekedColor('bg-gray-200');
+      return;
+    }
+
+    const item = stack[index];
+    setPeekedItem(item);
+    setPeekedColor('bg-yellow-200');
+    setNotification(`Peeked at index ${index}: ${item}`);
+
+    setTimeout(() => {
+      setPeekedColor('bg-gray-200');
+    }, 1000);
+  };
+
+
   return (
-    <div className="flex justify-center mt-10 pt-6 space-x-4">
-      <button className="flex items-center absolute gap-2 mr-[720px] text-black-600 hover:text-black-800 mb-5" onClick={goBack}>
+    <div className="max-w-7xl mx-auto mt-10 p-5 rounded-lg flex justify-center items-center relative">
+      <button className="absolute top-5 left-5 flex items-center gap-2 text-black-600 hover:text-black-800 mb-5" onClick={goBack}>
         <IoArrowBackSharp /> Back
       </button>
 
@@ -54,7 +106,7 @@ function Stacks() {
               stack.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-200 text-center py-3 px-5 w-full rounded-md shadow-md mb-2"
+                  className={`text-center py-3 px-5 w-full rounded-md shadow-md mb-2 ${peekedItem === item ? peekedColor : 'bg-gray-200'}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -99,6 +151,21 @@ function Stacks() {
                 Clear
               </button>
             </div>
+          </div>
+          <div className="flex items-center mb-4">
+            <input
+              type="text"
+              value={peekIndex}
+              onChange={(e) => setPeekIndex(e.target.value)}
+              placeholder="Peek index"
+              className="border border-gray-300 p-2 w-2/3 rounded-md"
+            />
+            <button
+              onClick={handlePeek}
+              className="ml-2 bg-gray-500 text-white p-2 rounded-md w-20"
+            >
+              Peek
+            </button>
           </div>
         </div>
 
