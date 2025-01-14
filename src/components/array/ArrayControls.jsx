@@ -18,7 +18,7 @@ const ArrayControls = ({
     insertIndex,
     setInsertIndex,
 }) => {
-    const buttonClass = "h-12 w-full bg-gray-600 text-white rounded-lg text-center hover:bg-gray-600";
+    const buttonClass = "h-8 w-full bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-600";
 
     return (
         <div className="grid grid-cols-3 gap-10">
@@ -28,7 +28,7 @@ const ArrayControls = ({
                     onClick={onAddElement}
                     className={buttonClass}
                 >
-                    Add Random Element
+                    Add Random
                 </button>
                 <span className="hover-label bg-gray-700">
                     Adds a random number to the end of the array.
@@ -41,7 +41,7 @@ const ArrayControls = ({
                     onClick={onRemoveElement}
                     className={buttonClass}
                 >
-                    Remove Last Element
+                    Remove Last
                 </button>
                 <span className="hover-label bg-gray-700">
                     Removes the last element from the array.
@@ -54,7 +54,7 @@ const ArrayControls = ({
                     onClick={onPopElement}
                     className={buttonClass}
                 >
-                    Pop Last Element
+                    Pop Last
                 </button>
                 <span className="hover-label bg-gray-700">
                     Pops (removes and returns) the last element.
@@ -68,11 +68,11 @@ const ArrayControls = ({
                     placeholder="Element (number)"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    className="h-12 px-4 py-2 border rounded-lg w-full pr-16"
+                    className="h-10 px-3 py-1 border rounded-md w-full pr-12 text-xs"
                 />
                 <button
                     onClick={onPushElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-600 text-white rounded-lg text-center hover:bg-gray-600"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-24 bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-600"
                 >
                     Push
                 </button>
@@ -85,14 +85,14 @@ const ArrayControls = ({
             <div className="relative group w-full">
                 <input
                     type="number"
-                    placeholder="Insert Index (position)"
+                    placeholder="Insert Index"
                     value={insertIndex}
                     onChange={(e) => setInsertIndex(e.target.value)}
-                    className="h-12 px-4 py-2 border rounded-lg w-full pr-16"
+                    className="h-10 px-3 py-1 border rounded-md w-full pr-12 text-xs"
                 />
                 <button
                     onClick={onInsertElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-24 bg-gray-600 text-white rounded-lg text-center hover:bg-gray-700"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-24 bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-700"
                 >
                     Insert
                 </button>

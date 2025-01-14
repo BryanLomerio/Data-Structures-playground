@@ -212,12 +212,12 @@ const ArrayVisualizer = () => {
             </button>
             <div className="mb-4">
 
-                <div className={`p-4 border-4 mb-10 ${arrayUpdated ? 'border-gray-500' : 'border-gray-500'}`}>
+                <div className={`p-2 border-2 mb-10 ${arrayUpdated ? 'border-gray-500' : 'border-gray-500'}`}>
                     <div className="flex gap-0 items-center justify-center flex-wrap">
                         <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
                             <div
                                 key={index}
-                                className={`relative px-8 mb-0 py-4 border-green-600 border-4 ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                                className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
                             >
                                 {element}
 

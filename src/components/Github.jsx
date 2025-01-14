@@ -14,10 +14,10 @@ function Github() {
         drag
         dragConstraints={{ top: 0, left: 0, right: window.innerWidth - 50, bottom: window.innerHeight - 50 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        whileHover={{ scale: 1.2 }} 
-        whileTap={{ scale: 0.9 }}  
-        onHoverStart={() => setIsHovered(true)} 
-        onHoverEnd={() => setIsHovered(false)}   
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
       >
         <a href="https://github.com/BryanLomerio" target="_blank" rel="noopener noreferrer">
           <FaGithubAlt className='text-4xl' />
