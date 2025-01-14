@@ -15,7 +15,10 @@ function Stacks() {
   const [peekedColor, setPeekedColor] = useState('bg-gray-200');
 
   const navigate = useNavigate();
-  const goBack = () => navigate('/');
+
+  function goBack() {
+    navigate('/');
+  }
 
   const pushToStack = () => {
     if (inputValue.trim() === '') return;
@@ -55,7 +58,6 @@ function Stacks() {
       return;
     }
 
-    // Check if stack is empty
     if (stack.length === 0) {
       Swal.fire({
         icon: 'error',
@@ -90,14 +92,13 @@ function Stacks() {
     }, 1000);
   };
 
-
   return (
-    <div className="max-w-7xl mx-auto mt-10 p-5 rounded-lg flex justify-center items-center relative">
-      <button className="absolute top-5 left-5 flex items-center gap-2 text-black-600 hover:text-black-800 mb-5" onClick={goBack}>
+    <div className="max-w-7xl mx-auto mt-10 p-5 rounded-lg flex justify-center items-center space-x-6">
+      <button className="absolute top-5 left-[400px] flex items-center gap-2 mt-[60px] text-black-600 hover:text-black-800 mb-5" onClick={goBack}>
         <IoArrowBackSharp /> Back
       </button>
 
-      <div className="w-full max-w-4xl p-6 space-y-6">
+      <div className="w-full sm:w-1/2 md:w-1/3 p-6 space-y-6">
         {/* Stack Display */}
         <div className="w-full h-96 rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-2">Current Stack:</h2>
@@ -120,16 +121,18 @@ function Stacks() {
             )}
           </div>
         </div>
+      </div>
 
+      <div className="w-full sm:w-1/2 md:w-1/3 p-6 space-y-6">
         {/* Stack Controller */}
-        <div className="w-full rounded-lg p-6">
+        <div className="w-full rounded-lg p-6 space-y-4 mt-20">
           <div className="flex justify-between items-center mb-4">
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Enter value"
-              className="border border-gray-300 p-2 w-2/3 rounded-md"
+              className="border border-gray-300 p-2 w-100 rounded-md"
             />
             <div className="space-x-2 flex">
               <button
@@ -167,32 +170,33 @@ function Stacks() {
               Peek
             </button>
           </div>
-        </div>
 
-        {/* Legend and Notification */}
-        <div className="space-y-4">
-          <div className="text-sm space-y-2">
-            <div className="bg-gray-100 p-2 rounded-md">
-              <strong>Current Top:</strong> {stack.length > 0 ? stack[stack.length - 1] : 'N/A'}
+          {/* Legend and Notification */}
+          <div className="space-y-4">
+            <div className="text-sm space-y-2">
+              <div className="bg-gray-100 p-2 rounded-md">
+                <strong>Current Top:</strong> {stack.length > 0 ? stack[stack.length - 1] : 'N/A'}
+              </div>
+              <div className="bg-gray-100 p-2 rounded-md">
+                <strong>Most Recent Push:</strong> {lastPushed || 'N/A'}
+              </div>
+              <div className="bg-gray-100 p-2 rounded-md">
+                <strong>Most Recent Pop:</strong> {lastPopped || 'N/A'}
+              </div>
+              <div className="bg-gray-100 p-2 rounded-md">
+                <strong>Stack Length:</strong> {stack.length}
+              </div>
             </div>
-            <div className="bg-gray-100 p-2 rounded-md">
-              <strong>Most Recent Push:</strong> {lastPushed || 'N/A'}
-            </div>
-            <div className="bg-gray-100 p-2 rounded-md">
-              <strong>Most Recent Pop:</strong> {lastPopped || 'N/A'}
-            </div>
-            <div className="bg-gray-100 p-2 rounded-md">
-              <strong>Stack Length:</strong> {stack.length}
-            </div>
-          </div>
 
-          {/* Notification */}
-          <div className={`text-sm p-3 rounded-md ${Log ? 'bg-green-200 text-green-600' : 'bg-gray-200 text-gray-600'}`}>
-            {Log}
+            {/* Notification */}
+            <div className={`text-sm p-3 rounded-md ${Log ? 'bg-green-200 text-green-600' : 'bg-gray-200 text-gray-600'}`}>
+              {Log}
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 
