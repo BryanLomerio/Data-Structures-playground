@@ -16,6 +16,7 @@ function QueueVisualizer() {
 
     return (
         <div className="max-w-xl mx-auto p-6 flex flex-col items-center justify-center min-h-screen">
+
             <h1 className="text-2xl font-bold text-center mb-4">Queue Visualizer</h1>
 
             {/* Queue Type Selection */}

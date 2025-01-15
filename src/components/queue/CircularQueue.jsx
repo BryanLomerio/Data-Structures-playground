@@ -12,7 +12,7 @@ function CircularQueue() {
     // Nav
     const navigate = useNavigate();
     const goBack = () => {
-        navigate('/');
+        navigate('/queues');
     };
 
     useEffect(() => {
