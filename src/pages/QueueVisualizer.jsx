@@ -1,8 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 function QueueVisualizer() {
     const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate('/');
+    };
+
 
     const handleQueueSelection = (queueType) => {
         if (queueType === "array") {
@@ -10,12 +16,19 @@ function QueueVisualizer() {
         } else if (queueType === "linked-list") {
             navigate("/circular-queue");
         } else {
-            navigate("/other-queue");
+            navigate("/queue-linear");
         }
     };
 
     return (
         <div className="max-w-xl mx-auto p-6 flex flex-col items-center justify-center min-h-screen">
+            <button
+                className="flex items-center gap-2 text-black-600 flex-start hover:text-gray-800 mb-10 mr-[450px] absolute top-20"
+                onClick={goBack}
+            >
+                <IoArrowBackSharp />
+                Back
+            </button>
 
             <h1 className="text-2xl font-bold text-center mb-4">Queue Visualizer</h1>
 

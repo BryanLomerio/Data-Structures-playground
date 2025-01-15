@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function ArrayQueue() {
     const [queue, setQueue] = useState([]);
     const [inputValue, setInputValue] = useState("");
-
+    const maxSize = 5;
 
     // Nav
     const navigate = useNavigate();
@@ -15,7 +15,14 @@ function ArrayQueue() {
 
     const enqueue = () => {
         if (inputValue !== "") {
-            setQueue([...queue, inputValue]);
+
+            if (queue.length >= maxSize) {
+
+                const newQueue = [...queue.slice(1), inputValue];
+                setQueue(newQueue);
+            } else {
+                setQueue([...queue, inputValue]);
+            }
             setInputValue("");
         }
     };
@@ -39,7 +46,7 @@ function ArrayQueue() {
     };
 
     const size = () => {
-        alert(`Queue size: ${queue.length}`);
+        alert(`Queue size: ${queue.length} / ${maxSize}`);
     };
 
     const clear = () => {
@@ -78,6 +85,13 @@ function ArrayQueue() {
                 </div>
             </div>
 
+            {/* Queue Size Indication */}
+            <div className="flex justify-center mt-4">
+                <span className={`text-lg font-semibold ${queue.length === maxSize ? "text-red-600" : "text-teal-600"}`}>
+                    {queue.length === maxSize ? "Queue is Full" : `Queue size: ${queue.length} / ${maxSize}`}
+                </span>
+            </div>
+
             {/* Input and Buttons */}
             <div className="flex flex-col items-center mt-6 space-y-4">
                 <input
@@ -91,6 +105,7 @@ function ArrayQueue() {
                     <button
                         onClick={enqueue}
                         className="px-6 py-2 bg-gray-600 text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        disabled={queue.length >= maxSize}
                     >
                         Enqueue
                     </button>
