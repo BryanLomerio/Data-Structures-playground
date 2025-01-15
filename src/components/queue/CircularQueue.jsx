@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { IoArrowBackSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 function CircularQueue() {
     const size = 5;
     const [queue, setQueue] = useState(new Array(size).fill(null));
@@ -7,6 +8,16 @@ function CircularQueue() {
     const [rear, setRear] = useState(-1);
     const [notification, setNotification] = useState('');
     const [inputValue, setInputValue] = useState('');
+
+    // Nav
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate('/');
+    };
+
+    useEffect(() => {
+        setNotification('Welcome! You can now add items to the queue.');
+    }, []);
 
     const enqueue = (item) => {
         if ((rear + 1) % size === front) {
@@ -44,13 +55,20 @@ function CircularQueue() {
 
     return (
         <div className="flex flex-col items-center p-4">
-            <h2 className="text-xl font-semibold mb-4">Circular Queue</h2>
 
-            <div className="flex justify-center gap-4 mb-4">
+            <h2 className="text-xl font-semibold mb-4">Circular Queue (FIFO)</h2>
+            <button
+                className="flex items-center gap-2 text-black-600 flex-start hover:text-gray-800 mb-10 mr-[400px] relative mt-10"
+                onClick={goBack}
+            >
+                <IoArrowBackSharp />
+                Back
+            </button>
+            <div className="flex justify-center gap-4 w-auto mb-4 bg-transparent p-5 border-2 ">
                 {queue.map((item, index) => (
                     <div
                         key={index}
-                        className={`w-16 h-16 flex items-center justify-center border-2 ${item ? 'bg-blue-300' : 'bg-gray-300'
+                        className={`w-16 h-16 flex items-center justify-center border-2 ${item ? 'bg-green-600' : 'bg-gray-300'
                             } rounded-full text-white`}
                     >
                         {item ? item : '-'}
@@ -75,13 +93,13 @@ function CircularQueue() {
                             setNotification('Please enter an item.');
                         }
                     }}
-                    className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
+                    className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-800"
                 >
                     Enqueue
                 </button>
                 <button
                     onClick={dequeue}
-                    className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                    className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-800"
                 >
                     Dequeue
                 </button>

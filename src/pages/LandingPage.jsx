@@ -46,13 +46,13 @@ const LandingPage = () => {
                     title="Array Visualizer"
                     description="Click to explore Array visualization"
                     onClick={() => handleCardClick("array")}
-                    image={Array} 
+                    image={Array}
                 />
                 <Card
                     title="Linked List Visualizer"
                     description="Click to explore Linked List visualization"
                     onClick={() => handleCardClick("linked-list")}
-                    image={LinkedList} 
+                    image={LinkedList}
                 />
                 <Card
                     title="Stacks Visualizer"
@@ -64,7 +64,7 @@ const LandingPage = () => {
                     title="Queues Visualizer"
                     description="Click to explore Queues visualization"
                     onClick={() => handleCardClick("queues")}
-                    image={Soon}
+                    image={Queues}
                 />
                 <Card
                     title="Hash Tables Visualizer"

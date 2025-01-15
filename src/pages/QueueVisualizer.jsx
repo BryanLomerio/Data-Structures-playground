@@ -24,19 +24,19 @@ function QueueVisualizer() {
                     onClick={() => handleQueueSelection("array")}
                     className="p-4 border-2 cursor-pointer rounded-lg hover:bg-gray-100"
                 >
-                    <h2 className="text-lg font-semibold">Array Queue</h2>
+                    <h2 className="text-lg font-semibold whitespace-nowrap text-center">Array Queue</h2>
                 </div>
                 <div
                     onClick={() => handleQueueSelection("linked-list")}
                     className="p-4 border-2 cursor-pointer rounded-lg hover:bg-gray-100"
                 >
-                    <h2 className="text-lg font-semibold">Circular Queue</h2>
+                    <h2 className="text-lg font-semibold whitespace-nowrap">Circular Queue (FIFO)</h2>
                 </div>
                 <div
                     onClick={() => handleQueueSelection("other")}
                     className="p-4 border-2 cursor-pointer rounded-lg hover:bg-gray-100"
                 >
-                    <h2 className="text-lg font-semibold">Other Queue</h2>
+                    <h2 className="text-lg font-semibold whitespace-nowrap">Queue (Linear)</h2>
                 </div>
             </div>
         </div>
