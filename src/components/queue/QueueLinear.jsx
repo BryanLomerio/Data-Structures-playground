@@ -10,7 +10,7 @@ function QueueLinear() {
     const [notification, setNotification] = useState("");
     const [inputValue, setInputValue] = useState("");
 
-    // Navigation
+    // Nav
     const navigate = useNavigate();
     const goBack = () => {
         navigate("/queues");
@@ -20,7 +20,7 @@ function QueueLinear() {
         setNotification("Welcome! You can now add items to the queue.");
     }, []);
 
-    // Enqueue operation
+    // Enqueue 
     const enqueue = (item) => {
         if (rear === size - 1) {
             setNotification("Queue is full! Cannot enqueue.");
@@ -30,9 +30,10 @@ function QueueLinear() {
         if (front === -1) {
             setFront(0);
         }
-        newQueue[rear + 1] = item;
+        const newRear = rear + 1;
+        newQueue[newRear] = item;
         setQueue(newQueue);
-        setRear(rear + 1);
+        setRear(newRear);
         setNotification(`Enqueued: '${item}'. Next action: Dequeue or Enqueue another item.`);
     };
 
@@ -69,7 +70,7 @@ function QueueLinear() {
                     <div
                         key={index}
                         className={`w-16 h-16 flex items-center justify-center border-2 ${item ? "bg-blue-600" : "bg-gray-300"
-                            } rounded text-white`}
+                            } rounded text-white ${index === front ? 'border-red-500' : ''} ${index === rear ? 'border-green-500' : ''}`}
                     >
                         {item ? item : "-"}
                     </div>
@@ -94,12 +95,14 @@ function QueueLinear() {
                         }
                     }}
                     className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-800"
+                    disabled={rear === size - 1}
                 >
                     Enqueue
                 </button>
                 <button
                     onClick={dequeue}
                     className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-800"
+                    disabled={front === -1 || front > rear}
                 >
                     Dequeue
                 </button>

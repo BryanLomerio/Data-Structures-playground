@@ -70,7 +70,7 @@ const LandingPage = () => {
                     title="Hash Tables Visualizer"
                     description="Click to explore Hash Tables visualization"
                     onClick={() => handleCardClick("hash-tables")}
-                    image={Soon}
+                    image={Hash}
                 />
                 <Card
                     title="Trees Visualizer"

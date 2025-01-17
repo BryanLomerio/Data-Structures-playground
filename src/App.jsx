@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import ArrayVisualizer from "./components/array/ArrayVisualizer";
 import LinkedListVisualizer from "./pages/LinkedListVisualizer";
 import QueueVisualizer from "./pages/QueueVisualizer";
+import Hash from "./pages/Hash";
 import Github from './components/Github';
 import Stacks from "./pages/Stacks";
 import ArrayQueue from "./components/queue/ArrayQueue";
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/array-queue" element={<ArrayQueue />} />
         <Route path="/circular-queue" element={<CircularQueue />} />
         <Route path="/queue-linear" element={<QueueLinear />} />
+        <Route path="/hash-tables" element={<Hash />} />
       </Routes>
       <Github />
     </Router>

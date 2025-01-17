@@ -113,7 +113,7 @@ function Stacks() {
               stack.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`text-center py-3 px-5 w-full rounded-md shadow-md mb-2 ${peekedItem === item ? peekedColor : 'bg-gray-200'}`}
+                  className={`text-center text-white py-3 px-5 w-full rounded-md shadow-md mb-2 ${peekedItem === item ? peekedColor : 'bg-green-700'}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -121,6 +121,7 @@ function Stacks() {
                 >
                   {item}
                 </motion.div>
+
               ))
             ) : (
               <p className="text-gray-500">Stack is empty</p>

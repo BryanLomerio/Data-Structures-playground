@@ -16,12 +16,10 @@ function ArrayQueue() {
     const enqueue = () => {
         if (inputValue !== "") {
 
-            if (queue.length >= maxSize) {
-
-                const newQueue = [...queue.slice(1), inputValue];
-                setQueue(newQueue);
-            } else {
+            if (queue.length < maxSize) {
                 setQueue([...queue, inputValue]);
+            } else {
+                alert("Queue is full!");
             }
             setInputValue("");
         }
@@ -32,6 +30,8 @@ function ArrayQueue() {
             const newQueue = [...queue];
             newQueue.shift();
             setQueue(newQueue);
+        } else {
+            alert("Queue is empty!");
         }
     };
 
