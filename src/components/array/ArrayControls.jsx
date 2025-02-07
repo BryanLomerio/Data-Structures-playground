@@ -18,178 +18,76 @@ const ArrayControls = ({
     insertIndex,
     setInsertIndex,
 }) => {
-    const buttonClass = "h-8 w-full bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-600";
+    const buttonClass =
+        "h-8 w-full bg-gray-200 text-gray-800 rounded-md text-xs text-center hover:bg-gray-300 focus:outline-none";
 
     return (
-        <div className="grid grid-cols-3 gap-10">
-            {/* Add Random Element */}
-            <div className="relative group">
-                <button
-                    onClick={onAddElement}
-                    className={buttonClass}
-                >
+        // Container with padding, a subtle border, and rounded corners.
+        <div className="p-4 border border-gray-300 rounded-md">
+            <div className="grid grid-cols-3 gap-4">
+                <button onClick={onAddElement} className={buttonClass}>
                     Add Random
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Adds a random number to the end of the array.
-                </span>
-            </div>
-
-            {/* Remove Last Element */}
-            <div className="relative group">
-                <button
-                    onClick={onRemoveElement}
-                    className={buttonClass}
-                >
+                <button onClick={onRemoveElement} className={buttonClass}>
                     Remove Last
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Removes the last element from the array.
-                </span>
-            </div>
-
-            {/* Pop Last Element */}
-            <div className="relative group">
-                <button
-                    onClick={onPopElement}
-                    className={buttonClass}
-                >
+                <button onClick={onPopElement} className={buttonClass}>
                     Pop Last
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Pops (removes and returns) the last element.
-                </span>
-            </div>
 
-            {/* Push Element */}
-            <div className="relative group w-full">
-                <input
-                    type="number"
-                    placeholder="Element (number)"
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    className="h-10 px-3 py-1 border rounded-md w-full pr-12 text-xs"
-                />
-                <button
-                    onClick={onPushElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-24 bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-600"
-                >
-                    Push
-                </button>
-                <span className="hover-label bg-gray-700">
-                    Adds a new element to the end of the array.
-                </span>
-            </div>
+                <div className="relative">
+                    <input
+                        type="number"
+                        placeholder="Element"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        className="h-8 w-full border border-gray-300 rounded-md px-2 text-xs focus:outline-none"
+                    />
+                    <button
+                        onClick={onPushElement}
+                        className="absolute right-0 top-0 h-8 px-2 bg-gray-200 text-gray-800 rounded-r-md text-xs hover:bg-gray-300 focus:outline-none"
+                    >
+                        Push
+                    </button>
+                </div>
 
-            {/* Insert Element */}
-            <div className="relative group w-full">
-                <input
-                    type="number"
-                    placeholder="Insert Index"
-                    value={insertIndex}
-                    onChange={(e) => setInsertIndex(e.target.value)}
-                    className="h-10 px-3 py-1 border rounded-md w-full pr-12 text-xs"
-                />
-                <button
-                    onClick={onInsertElement}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-24 bg-gray-600 text-white rounded-md text-xs text-center hover:bg-gray-700"
-                >
-                    Insert
-                </button>
-                <span className="hover-label bg-gray-700">
-                    Inserts an element at the specified index.
-                </span>
-            </div>
+                <div className="relative">
+                    <input
+                        type="number"
+                        placeholder="Index"
+                        value={insertIndex}
+                        onChange={(e) => setInsertIndex(e.target.value)}
+                        className="h-8 w-full border border-gray-300 rounded-md px-2 text-xs focus:outline-none"
+                    />
+                    <button
+                        onClick={onInsertElement}
+                        className="absolute right-0 top-0 h-8 px-2 bg-gray-200 text-gray-800 rounded-r-md text-xs hover:bg-gray-300 focus:outline-none"
+                    >
+                        Insert
+                    </button>
+                </div>
 
-            {/* Splice Element */}
-            <div className="relative group">
-                <button
-                    onClick={onSpliceElement}
-                    className={buttonClass}
-                >
+                <button onClick={onSpliceElement} className={buttonClass}>
                     Splice Element
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Removes or replaces elements in the array.
-                </span>
-            </div>
-
-            {/* Unshift Element */}
-            <div className="relative group">
-                <button
-                    onClick={onUnshiftElement}
-                    className={buttonClass}
-                >
+                <button onClick={onUnshiftElement} className={buttonClass}>
                     Unshift Element
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Adds a new element to the start of the array.
-                </span>
-            </div>
-
-            {/* Reverse Array */}
-            <div className="relative group">
-                <button
-                    onClick={onReverseArray}
-                    className={buttonClass}
-                >
+                <button onClick={onReverseArray} className={buttonClass}>
                     Reverse Array
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Reverses the order of the array.
-                </span>
-            </div>
-
-            {/* Sort Array */}
-            <div className="relative group">
-                <button
-                    onClick={onSortArray}
-                    className={buttonClass}
-                >
+                <button onClick={onSortArray} className={buttonClass}>
                     Sort Array
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Sorts the array in ascending order.
-                </span>
-            </div>
-
-            {/* Concat Array */}
-            <div className="relative group">
-                <button
-                    onClick={onConcatArray}
-                    className={buttonClass}
-                >
+                <button onClick={onConcatArray} className={buttonClass}>
                     Concat Array
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Concatenates another array.
-                </span>
-            </div>
-
-            {/* Slice Array */}
-            <div className="relative group">
-                <button
-                    onClick={onSliceArray}
-                    className={buttonClass}
-                >
+                <button onClick={onSliceArray} className={buttonClass}>
                     Slice Array
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Slices a portion of the array.
-                </span>
-            </div>
-
-            {/* Shift Element */}
-            <div className="relative group">
-                <button
-                    onClick={onShiftElement}
-                    className={buttonClass}
-                >
+                <button onClick={onShiftElement} className={buttonClass}>
                     Shift Element
                 </button>
-                <span className="hover-label bg-gray-700">
-                    Removes the first element of the array.
-                </span>
             </div>
         </div>
     );

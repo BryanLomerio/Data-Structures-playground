@@ -21,8 +21,7 @@ const ArrayVisualizer = () => {
         setIsVisible(!isVisible);
     };
 
-
-    // Nav
+    // Navigation
     const navigate = useNavigate();
     const goBack = () => {
         navigate('/');
@@ -38,7 +37,6 @@ const ArrayVisualizer = () => {
             const timer = setTimeout(() => setHighlightedElement(null), 2000);
             return () => clearTimeout(timer);
         }
-
         if (deletedElement !== null) {
             const timer = setTimeout(() => setDeletedElement(null), 1000);
             return () => clearTimeout(timer);
@@ -82,7 +80,13 @@ const ArrayVisualizer = () => {
 
     const insertElement = () => {
         const index = parseInt(insertIndex);
-        if (inputValue !== '' && !isNaN(inputValue) && !isNaN(index) && index >= 0 && index <= array.length) {
+        if (
+            inputValue !== '' &&
+            !isNaN(inputValue) &&
+            !isNaN(index) &&
+            index >= 0 &&
+            index <= array.length
+        ) {
             const newArray = [...array];
             newArray.splice(index, 0, parseInt(inputValue));
             setArray(newArray);
@@ -159,7 +163,13 @@ const ArrayVisualizer = () => {
 
     const spliceElement = () => {
         const index = parseInt(insertIndex);
-        if (inputValue !== '' && !isNaN(inputValue) && !isNaN(index) && index >= 0 && index < array.length) {
+        if (
+            inputValue !== '' &&
+            !isNaN(inputValue) &&
+            !isNaN(index) &&
+            index >= 0 &&
+            index < array.length
+        ) {
             const newArray = [...array];
             newArray.splice(index, 1, parseInt(inputValue));
             setArray(newArray);
@@ -202,34 +212,34 @@ const ArrayVisualizer = () => {
     };
 
     return (
-        <div className="p-6 max-w-screen-lg mx-auto">
+        <div className="p-6 max-w-screen-lg mx-auto border border-gray-300 rounded-md shadow-sm">
             <button
-                className="flex items-center gap-2 text-black-600 hover:text-gray-800 mb-10 mt-10"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-10 mt-10"
                 onClick={goBack}
             >
                 <IoArrowBackSharp />
                 Back
             </button>
             <div className="mb-4">
-
-                <div className={`p-2 border-2 mb-10 ${arrayUpdated ? 'border-gray-500' : 'border-gray-500'}`}>
-                    <div className="flex gap-0 items-center justify-center flex-wrap">
-                        <p className='mr-2 font-bold'>arr</p> {array.map((element, index) => (
+                {/* Array display container */}
+                <div className="p-4 mb-10 border border-gray-300 rounded-md">
+                    <div className="flex flex-wrap items-center justify-center gap-2">
+                        <span className="mr-2 font-bold">arr</span>
+                        {array.map((element, index) => (
                             <div
                                 key={index}
-                                className={`relative px-8 mb-0 py-4 border-green-600 border-2 ${highlightedElement === element ? 'bg-green-300' : ''}`}
+                                className={`relative px-4 py-2 border border-gray-300 rounded-md ${highlightedElement === element ? 'bg-gray-100' : 'bg-white'
+                                    }`}
                             >
                                 {element}
-
-                                {/* Index Indicator */}
-                                <div className="absolute bottom-0 left-0 right-0 text-center text-xs font-bold text-black-600">
-                                    arr[{index}]
+                                {/* Index indicator below each element */}
+                                <div className="absolute -bottom-4 left-0 right-0 text-center text-xs text-gray-500">
+                                    [{index}]
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-
             </div>
             <ArrayControls
                 onAddElement={addElement}
@@ -252,11 +262,10 @@ const ArrayVisualizer = () => {
             <div>
                 <GeneratedCode generatedCode={generatedCode} explanation={explanation} />
             </div>
-
             <div className="mt-10">
                 <button
                     onClick={toggleVisibility}
-                    className="flex items-center justify-between px-4 py-2 bg-gray-500 text-white rounded-md mb-4"
+                    className="flex items-center justify-between px-4 py-2 bg-gray-300 text-gray-800 rounded-md mb-4 hover:bg-gray-400 focus:outline-none"
                 >
                     What is an Array?
                     <span className="ml-2">
@@ -269,11 +278,7 @@ const ArrayVisualizer = () => {
                                 stroke="currentColor"
                                 className="w-5 h-5"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19 14l-7-7-7 7"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7-7-7 7" />
                             </svg>
                         ) : (
                             <svg
@@ -284,11 +289,7 @@ const ArrayVisualizer = () => {
                                 stroke="currentColor"
                                 className="w-5 h-5"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19 10l-7 7-7-7"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 10l-7 7-7-7" />
                             </svg>
                         )}
                     </span>
