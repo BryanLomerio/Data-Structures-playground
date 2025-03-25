@@ -120,3 +120,164 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.tree-visualizer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  background-color: #f8f7fc;
+  color: #333333;
+}
+
+.tree-controls {
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #e6e1f9;
+  box-shadow: 0 2px 4px rgba(123, 44, 191, 0.08);
+  z-index: 10;
+}
+
+.tree-controls h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #5a189a;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.control-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.tree-controls input,
+.tree-controls select {
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #d0c6e7;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tree-controls input:focus,
+.tree-controls select:focus {
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 2px rgba(123, 44, 191, 0.15);
+}
+
+.tree-controls button {
+  padding: 8px 16px;
+  background-color: #7b2cbf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.tree-controls button:hover {
+  background-color: #9d4edd;
+}
+
+.tree-controls button:active {
+  transform: translateY(1px);
+}
+
+.tree-controls button:disabled {
+  background-color: #c8b8db;
+  cursor: not-allowed;
+}
+
+.tree-container {
+  flex: 1;
+  overflow: auto;
+  background-color: #f8f7fc;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tree-svg {
+  transition: transform 0.5s ease;
+}
+
+.tree-content {
+  transform: translate(400px, 50px);
+}
+
+.tree-node {
+  transition: transform 0.5s ease;
+}
+
+.tree-node circle {
+  fill: #7b2cbf;
+  stroke: #5a189a;
+  stroke-width: 2;
+  transition: fill 0.3s, r 0.3s;
+}
+
+.tree-node text {
+  fill: white;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.tree-node.highlighted circle {
+  fill: #c77dff;
+  stroke: #9d4edd;
+  r: 28;
+  animation: pulse 1.5s infinite;
+}
+
+.tree-edge {
+  stroke: #8a7ca5;
+  stroke-width: 2;
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+@keyframes pulse {
+  0% {
+    r: 25;
+    stroke-width: 2;
+  }
+  50% {
+    r: 28;
+    stroke-width: 3;
+  }
+  100% {
+    r: 25;
+    stroke-width: 2;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tree-controls {
+    padding: 15px;
+  }
+
+  .control-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tree-controls button,
+  .tree-controls input,
+  .tree-controls select {
+    width: 100%;
+  }
+}
+
+

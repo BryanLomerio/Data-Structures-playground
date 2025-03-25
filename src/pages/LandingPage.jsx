@@ -6,6 +6,7 @@ import Stacks from "../assets/stacks.png"
 import Queues from "../assets/Queues.png"
 import Hash from "../assets/hash.png"
 import Soon from "../assets/soon.avif"
+import Tree from "../assets/tree.png"
 
 const LandingPage = () => {
   const navigate = useNavigate()
@@ -33,7 +34,7 @@ const LandingPage = () => {
     { id: "stacks", title: "Stacks Visualizer", image: Stacks, available: true },
     { id: "queues", title: "Queues Visualizer", image: Queues, available: true },
     { id: "hash-tables", title: "Hash Tables Visualizer", image: Hash, available: true },
-    { id: "trees", title: "Trees Visualizer", image: Soon, available: false },
+    { id: "trees", title: "Trees Visualizer", image: Tree, available: true },
     { id: "graphs", title: "Graphs Visualizer", image: Soon, available: false },
     { id: "heaps", title: "Heaps Visualizer", image: Soon, available: false },
     { id: "sets", title: "Sets Visualizer", image: Soon, available: false },

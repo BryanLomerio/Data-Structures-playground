@@ -10,6 +10,8 @@ import Stacks from "./pages/Stacks";
 import ArrayQueue from "./components/queue/ArrayQueue";
 import CircularQueue from "./components/queue/CircularQueue";
 import QueueLinear from "./components/queue/QueueLinear";
+import TreeVisualizer from "./pages/TreeVisualizer";
+
 
 
 const App = () => {
@@ -24,7 +26,8 @@ const App = () => {
         <Route path="/array-queue" element={<ArrayQueue />} />
         <Route path="/circular-queue" element={<CircularQueue />} />
         <Route path="/queue-linear" element={<QueueLinear />} />
-        <Route path="/hash-tables" element={<Hash />} />
+        <Route path="/hash-tables" element={<Hash />}/>
+        <Route path="/trees" element={<TreeVisualizer/>} />
       </Routes>
       <Github />
     </Router>
