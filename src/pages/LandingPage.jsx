@@ -44,7 +44,7 @@ const LandingPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-12">
         <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-blue-800 mb-3">Data Structure Visualization</h1>
+          <h1 className="text-4xl font-bold text-green-800 mb-3">Data Structure Visualization</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Interactive visualizations to help you understand how different data structures work
           </p>
