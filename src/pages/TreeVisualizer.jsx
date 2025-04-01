@@ -263,11 +263,10 @@ const TreeVisualizer = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-b from-purple-50 to-white">
-      {/* Header with back button */}
       <div className="bg-white shadow-sm px-6 py-4 flex items-center">
         <button
           onClick={goBack}
-          className="flex items-center gap-2 text-purple-700 hover:text-purple-900 transition-colors"
+          className="flex items-center gap-2 text-black hover:text-purple-900 transition-colors"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path
@@ -276,9 +275,9 @@ const TreeVisualizer = () => {
               clipRule="evenodd"
             />
           </svg>
-          <span className="font-medium">Back</span>
+          <span className="font-medium text-black">Back</span>
         </button>
-        <h1 className="text-2xl font-bold text-purple-800 mx-auto">Binary Tree Visualizer</h1>
+        <h1 className="text-2xl font-bold text-black mx-auto">Binary Tree Visualizer</h1>
       </div>
 
       {/* Controls */}
@@ -287,7 +286,7 @@ const TreeVisualizer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Node Operations */}
             <div className="bg-purple-50 rounded-lg p-4 shadow-sm">
-              <h2 className="text-lg font-semibold text-purple-800 mb-3">Node Operations</h2>
+              <h2 className="text-lg font-semibold text-black mb-3">Node Operations</h2>
               <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
                   <input
@@ -303,14 +302,14 @@ const TreeVisualizer = () => {
                   <button
                     onClick={handleInsert}
                     disabled={isTraversing}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-500 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
                   >
                     Insert Node
                   </button>
                   <button
                     onClick={handleRemove}
                     disabled={isTraversing}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-500 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
                   >
                     Remove Node
                   </button>
@@ -320,7 +319,7 @@ const TreeVisualizer = () => {
 
             {/* Traversal */}
             <div className="bg-purple-50 rounded-lg p-4 shadow-sm">
-              <h2 className="text-lg font-semibold text-purple-800 mb-3">Tree Traversal</h2>
+              <h2 className="text-lg font-semibold text-black mb-3">Tree Traversal</h2>
               <div className="flex flex-col gap-3">
                 <select
                   value={traversalType}
@@ -335,7 +334,7 @@ const TreeVisualizer = () => {
                 <button
                   onClick={handleTraversal}
                   disabled={isTraversing || !tree.root}
-                  className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
+                  className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-500 transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed"
                 >
                   {isTraversing ? "Traversing..." : "Start Traversal"}
                 </button>
@@ -344,19 +343,19 @@ const TreeVisualizer = () => {
 
             {/* Tree Actions */}
             <div className="bg-purple-50 rounded-lg p-4 shadow-sm">
-              <h2 className="text-lg font-semibold text-purple-800 mb-3">Tree Actions</h2>
+              <h2 className="text-lg font-semibold text-black mb-3">Tree Actions</h2>
               <div className="grid grid-cols-2 gap-3">
                 <button
                   onClick={generateSampleTree}
                   disabled={isTraversing}
-                  className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
+                  className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-500 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
                 >
                   Sample Tree
                 </button>
                 <button
                   onClick={clearTree}
                   disabled={isTraversing}
-                  className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors disabled:bg-red-300 disabled:cursor-not-allowed"
+                  className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-500 transition-colors disabled:bg-red-300 disabled:cursor-not-allowed"
                 >
                   Clear Tree
                 </button>

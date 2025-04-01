@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Circle, LayoutGrid, LineChart } from 'lucide-react';
 
@@ -54,7 +53,7 @@ function QueueVisualizer() {
           <span>Back</span>
         </button>
         <h1 className="text-2xl font-bold text-center">Queue Visualizer</h1>
-        <div className="w-[72px]"></div> {/* Spacer for centering */}
+        <div className="w-[72px]"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -73,7 +72,7 @@ function QueueVisualizer() {
         ))}
       </div>
 
-      <div className="mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+      <div className="relative mt-8 p-4 bg-gray-50 border border-gray-200 rounded-lg">
         <h2 className="text-lg font-semibold mb-2">What is a Queue?</h2>
         <p className="text-gray-700">
           A queue is a linear data structure that follows the First In, First Out (FIFO) principle.
@@ -92,9 +91,9 @@ function QueueVisualizer() {
               <rect x="130" y="20" width="50" height="20" fill="#93c5fd" rx="2" />
               <rect x="190" y="20" width="50" height="20" fill="#93c5fd" rx="2" />
 
-              {/* Arrows */}
-              <path d="M 0,5 L 15,5 L 10,10 L 15,5 L 10,0 Z" fill="#4b5563" transform="translate(285, 30)" />
-              <path d="M 0,5 L 15,5 L 10,10 L 15,5 L 10,0 Z" fill="#4b5563" transform="translate(0, 30) rotate(180)" />
+
+              {/* <path d="M 0,5 L 15,5 L 10,10 L 15,5 L 10,0 Z" fill="#4b5563" transform="translate(285, 30)" />
+              <path d="M 0,5 L 15,5 L 10,10 L 15,5 L 10,0 Z" fill="#4b5563" transform="translate(0, 30) rotate(180)" /> */}
             </svg>
           </div>
         </div>
