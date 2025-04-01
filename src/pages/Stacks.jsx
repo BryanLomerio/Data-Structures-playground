@@ -166,11 +166,11 @@ function Stacks() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Stack Visualization */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4">
             <h2 className="text-xl font-semibold text-white">
               Stack Visualization
             </h2>
-            <p className="text-green-100 text-sm">Last In, First Out (LIFO)</p>
+            <p className="text-white text-sm">Last In, First Out (LIFO)</p>
           </div>
 
           <div className="p-6">
@@ -306,7 +306,7 @@ function Stacks() {
                 <button
                   onClick={pushToStack}
                   disabled={!inputValue.trim()}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-r-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Push
                 </button>
@@ -332,7 +332,7 @@ function Stacks() {
                 />
                 <button
                   onClick={handlePeek}
-                  className="ml-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors"
+                  className="ml-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-r-md transition-colors"
                 >
                   Peek
                 </button>
