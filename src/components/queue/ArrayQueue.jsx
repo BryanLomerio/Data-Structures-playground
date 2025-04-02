@@ -140,7 +140,7 @@ function ArrayQueue() {
       </div>
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-3">
+        <div className="bg-gradient-to-r from-gray-700 to-gray-600 px-4 py-3">
           <h3 className="text-white font-medium">Queue Visualization (FIFO)</h3>
         </div>
 
@@ -262,7 +262,7 @@ function ArrayQueue() {
               />
               <button
                 onClick={enqueue}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isAnimating || queue.length >= maxSize || !inputValue}
               >
                 <ArrowRight size={16} />
@@ -281,7 +281,7 @@ function ArrayQueue() {
               </button>
               <button
                 onClick={peek}
-                className="px-3 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors flex items-center justify-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-3 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isAnimating || queue.length === 0}
               >
                 <Eye size={16} />

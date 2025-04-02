@@ -116,7 +116,7 @@ function QueueLinear() {
       </div>
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-gradient-to-r from-purple-500 to-purple-600 px-4 py-3">
+        <div className="bg-gradient-to-r from-gray-700 to-gray-600 px-4 py-3">
           <h3 className="text-white font-medium">Queue Visualization (FIFO)</h3>
         </div>
 
@@ -260,7 +260,7 @@ function QueueLinear() {
                     setNotification("Please enter a value.")
                   }
                 }}
-                className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isAnimating || isFull() || !inputValue}
               >
                 <ArrowRight size={16} />
